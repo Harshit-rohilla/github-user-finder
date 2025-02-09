@@ -12,7 +12,7 @@ export function GithubContextProvider({children}){
     const[fourRepo,setFourRepo]=useState([])
     const[valueIn, setValueIn]=useState("")
 
-    const value={user,setUser,repo,setRepo,followers,setFollowers,userInfo,setUserInfo,setLoading,fourRepo,setFourRepo,valueIn, setValueIn}
+    const value={user,setUser,repo,setRepo,followers,setFollowers,userInfo,setUserInfo,loading,setLoading,fourRepo,setFourRepo,valueIn, setValueIn}
 
     return  <GithubContext.Provider value={value}>
                 {children}
