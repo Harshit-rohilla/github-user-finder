@@ -66,22 +66,27 @@ function App(){
         </div>
         <div className="text-white text-lg">CodeProfile</div>
       </nav>
-      {/* top-part */}
+      
       <div className="w-[70%] mx-auto flex flex-col items-center flex-grow">
+        {/* search bar */}
         <div className="w-2/3 flex gap-4 mt-2">
           <input onChange={(e)=>{setValueIn(e.target.value.toLowerCase())}} className="flex-grow px-4 py-2 outline-none border-2 rounded-3xl border-[#e2e8f0] bg-white" type="text" value={valueIn} placeholder="search profile..."/>
           <button onClick={()=>{setUser(valueIn)}} className="px-4 py-2 text-white text-center cursor-pointer bg-[#4299e1] rounded-3xl">search</button>
         </div>
         {loading?<Loader/>:
         <div className="w-full gap-2 mt-2 flex-grow flex flex-col mb-2">
+          {/* top part */}
         <div className="w-full flex gap-2 h-3/5">
+          {/* image part or top left */}
           <div className="w-[30%] flex flex-col items-center gap-1 py-4 px-4 border-2 rounded-xl border-[#e2e8f0] bg-white">
             <img src={userInfo.avatar_url} alt="user-img" className="object-cover w-16 h-16 rounded-full" />
             <h1 className="text-[#2d3748] text-2xl font-semibold">{userInfo.name}</h1>
             <h1 className="text-[#718096]">@{userInfo.login}</h1>
             <div className="text-[#718096] mt-3 py-2 px-4 rounded-lg max-h-40 text-sm bg-[#f7fafc]">{userInfo.bio}</div>
           </div>
+          {/* top right part */}
           <div className="w-[70%] flex flex-col gap-2 ">
+            {/* 3 boxes */}
             <div className="w-full h-[25%] px-3 py-2 grid grid-cols-3 gap-4 border-2 rounded-xl border-[#e2e8f0] bg-white">
               <div className="bg-[#ebf8ff] rounded-lg flex flex-col items-center justify-center">
                 <p className="text-[#2b6cb0] text-lg">{userInfo.public_repos}</p>
@@ -96,10 +101,13 @@ function App(){
                 <p className=" text-[#4a5568]">Following</p>
               </div>
             </div>
+            {/* graph + followers part */}
             <div className="w-full h-[75%] flex gap-2">
+              {/* graph */}
               <div className="h-full w-1/2 border-2 rounded-xl border-[#e2e8f0] bg-white">
                 <LanguageChart repos={fourRepo}/>
               </div>
+              {/* followers part */}
               <div className="h-full overflow-auto flex flex-col gap-1 px-4 py-2 w-1/2 border-2 rounded-xl border-[#e2e8f0] bg-white">
                 <h1 className="text-[#2d3748] font-semibold">Followers</h1>
                 <div className="max-h-50 flex flex-col gap-2">
@@ -109,6 +117,7 @@ function App(){
             </div>
           </div>
         </div>
+        {/* all repositories */}
         <div className="w-full flex flex-col h-2/5 px-4 pt-2 bg-white border-2 rounded-xl border-[#e2e8f0]">
           <h1 className="w-full text-[#2d3748] text-lg font-semibold">Repositories</h1>
           <div className="w-full flex-grow grid grid-cols-3 gap-2 overflow-y-auto max-h-44">
