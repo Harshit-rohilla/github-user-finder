@@ -64,7 +64,7 @@ function App(){
         <div className="w-11 h-11 border border-[#63b3ed] rounded-full">
           <img className="h-full w-full object-fill" src="/dev-profile-logo.svg" alt="logo" />
         </div>
-        <div className="text-white text-lg">GithubProfile</div>
+        <div className="text-white text-lg">CodeProfile</div>
       </nav>
       {/* top-part */}
       <div className="w-[70%] mx-auto flex flex-col items-center flex-grow">
